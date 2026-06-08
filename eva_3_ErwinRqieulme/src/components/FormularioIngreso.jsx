@@ -7,17 +7,16 @@ function FormularioIngreso({ onRegistrar, vehiculos }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Validación básica
-    if (!patente.trim()) {
-      setError('La patente es obligatoria.');
+
+    // Validar formato de patente (4 letras y 2 números)
+    const regexPatente = /^[a-zA-Z]{4}[0-9]{2}$/;
+    if (!regexPatente.test(patente)) {
+      setError('La patente debe tener 4 letras y 2 números (Ej: ABCD12).');
       return;
     }
 
-    // Validar si la patente ya está en el estacionamiento
-    const existe = vehiculos.find(v => v.patente.toUpperCase() === patente.toUpperCase());
-    if (existe) {
-      setError('Este vehículo ya se encuentra en el estacionamiento.');
+    if (vehiculos.length >= 10) {
+      setError('El estacionamiento está lleno. No hay cupos disponibles.');
       return;
     }
 
@@ -29,7 +28,7 @@ function FormularioIngreso({ onRegistrar, vehiculos }) {
 
     onRegistrar(nuevoVehiculo);
     setPatente('');
-    setError(''); // Limpiar errores
+    setError(''); 
   };
 
   return (

@@ -9,9 +9,9 @@ function PanelOcupacion({ vehiculos, onSalida }) {
         <p>El estacionamiento está vacío.</p>
       ) : (
         <ul className="lista-vehiculos">
-          {vehiculos.map((vehiculo, index) => (
+          {vehiculos.map((vehiculo) => (
             <VehiculoItem 
-              key={index} // Idealmente usar una ID única, pero index sirve para este caso básico
+              key={vehiculo.patente}
               vehiculo={vehiculo} 
               onSalida={onSalida} 
             />
