@@ -1,0 +1,85 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Aplicación de Flexbox solicitada en rúbrica */
+.dashboard {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* Para hacerlo responsivo */
+}
+
+.formulario, .panel-ocupacion {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-width: 300px;
+}
+
+.formulario div {
+  margin-bottom: 1rem;
+}
+
+.formulario input, .formulario select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.btn-salida {
+  background-color: #e74c3c;
+}
+
+.btn-salida:hover {
+  background-color: #c0392b;
+}
+
+.lista-vehiculos {
+  list-style: none;
+  padding: 0;
+}
+
+.vehiculo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ecf0f1;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+}
