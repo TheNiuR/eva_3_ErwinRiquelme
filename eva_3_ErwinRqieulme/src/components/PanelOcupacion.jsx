@@ -3,7 +3,7 @@ import VehiculoItem from './VehiculoItem';
 function PanelOcupacion({ vehiculos, onSalida }) {
   return (
     <div className="panel-ocupacion">
-      <h2>Ocupación Actual: {vehiculos.length} vehículos</h2>
+      <h2>Ocupación Actual: {vehiculos.length} / 10 </h2>
       
       {vehiculos.length === 0 ? (
         <p>El estacionamiento está vacío.</p>
