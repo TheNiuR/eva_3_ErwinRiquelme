@@ -15,7 +15,11 @@ function App() {
   }, [vehiculos]);
 
 
-  const registrarIngreso = (nuevoVehiculo) => {
+  const agregarVehiculo = (nuevoVehiculo) => {
+    if (vehiculos.length >= 10) {
+      alert('El estacionamiento está lleno. No hay cupos disponibles.');
+      return;
+    }
     setVehiculos([...vehiculos, nuevoVehiculo]);
   };
 
@@ -31,11 +35,11 @@ function App() {
         <h1>Sistema de Gestión de Estacionamientos</h1>
       </header>
      <main className="dashboard">
-        <FormularioIngreso onRegistrar={registrarIngreso} vehiculos={vehiculos} />
+        <FormularioIngreso onRegistrar={agregarVehiculo} vehiculos={vehiculos} />
         <PanelOcupacion vehiculos={vehiculos} onSalida={registrarSalida} />
      </main>
       <footer>
-        <p>Contacto / Créditos</p>
+        <p>Analista Progrador / Erwin Riquelme</p>
       </footer>
     </div>
   );

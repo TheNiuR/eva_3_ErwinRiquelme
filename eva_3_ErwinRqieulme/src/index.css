@@ -1,86 +1,188 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  line-height: 1.25;
+  
+  --bg-principal: #09090b;       
+  --bg-tarjeta: #18181b;         
+  --bg-input-item: #27272a;      
+  
+
+  --texto-primario: #f4f4f5;     
+  --texto-secundario: #a1a1aa;   
+  
+  --color-borde: #3f3f46;        
+
+  --color-marca: #3b82f6;        
+  --color-marca-hover: #1d4ed8;
+  --color-peligro: #ef4444;      
+  --color-peligro-hover: #b91c1c;
 }
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-principal);
+  color: var(--texto-primario);
+  min-height: 100vh;
+}
+
+
 .app-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 1.5rem;
 }
 
 h1 {
   text-align: center;
-  color: #2c3e50;
+  color: var(--texto-primario);
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
 }
 
 .dashboard {
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
 }
+
 
 .formulario, .panel-ocupacion {
   flex: 1;
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  min-width: 300px;
+  background-color: var(--bg-tarjeta);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+  min-width: 320px;
+}
+
+h2 {
+  color: var(--texto-primario);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: 0.75rem;
 }
 
 .formulario div {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
+
+label {
+  display: block;
+  color: var(--texto-secundario);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
 
 .formulario input, .formulario select {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-input-item);
+  color: var(--texto-primario);
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+
+.formulario input:focus, .formulario select:focus {
+  border-color: var(--color-marca);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+
 button {
-  background-color: #3498db;
-  color: white;
+  width: 100%;
+  background-color: var(--color-marca);
+  color: #ffffff;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 4px;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: var(--color-marca-hover);
 }
 
-.btn-salida {
-  background-color: #e74c3c;
+button:active {
+  transform: scale(0.98);
 }
 
-.btn-salida:hover {
-  background-color: #c0392b;
-}
 
 .lista-vehiculos {
   list-style: none;
   padding: 0;
-  max-height: 400px;
+  max-height: 380px;
   overflow-y: auto;
 }
+
+
+.lista-vehiculos::-webkit-scrollbar {
+  width: 6px;
+}
+.lista-vehiculos::-webkit-scrollbar-thumb {
+  background-color: var(--color-borde);
+  border-radius: 3px;
+}
+
 
 .vehiculo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ecf0f1;
+  background-color: var(--bg-input-item);
   margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
 }
 
+.vehiculo-item strong {
+  color: var(--texto-primario);
+  font-size: 1.1rem;
+}
+
+small {
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+}
+
+
+.btn-salida {
+  width: auto;
+  background-color: var(--color-peligro);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-salida:hover {
+  background-color: var(--color-peligro-hover);
+}
+
+
 .error {
-  color: #e74c3c;
-  font-weight: bold;
+  color: #f87171;
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
