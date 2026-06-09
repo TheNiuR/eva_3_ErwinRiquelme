@@ -39,7 +39,7 @@ function App() {
         <PanelOcupacion vehiculos={vehiculos} onSalida={registrarSalida} />
      </main>
       <footer>
-        <p>Analista Progrador / Erwin Riquelme</p>
+        <p>Analista Programador / Erwin Riquelme</p>
       </footer>
     </div>
   );
