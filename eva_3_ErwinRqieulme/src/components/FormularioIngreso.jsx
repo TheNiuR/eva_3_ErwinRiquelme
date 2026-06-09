@@ -37,18 +37,22 @@ function FormularioIngreso({ onRegistrar, vehiculos }) {
       {error && <p className="error">{error}</p>}
       
       <div>
-        <label>Patente:</label>
+        <label htmlFor="patenteInput">Patente:</label>
         <input 
+          id="patenteInput"
           type="text" 
           value={patente} 
-          onChange={(e) => setPatente(e.target.value)} 
-          placeholder="Ej: AB1234"
+          onChange={(e) => {
+            setPatente(e.target.value);
+            setError('');}}
+          placeholder="Ej: ABCD12"
+          maxLength={6}
         />
       </div>
 
       <div>
-        <label>Tipo de Vehículo:</label>
-        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+        <label htmlFor="tipoVehiculo">Tipo de Vehículo:</label>
+        <select id="tipoVehiculo" value={tipo} onChange={(e) => setTipo(e.target.value)}>
           <option value="Auto">Auto</option>
           <option value="Moto">Moto</option>
           <option value="Camioneta">Camioneta</option>

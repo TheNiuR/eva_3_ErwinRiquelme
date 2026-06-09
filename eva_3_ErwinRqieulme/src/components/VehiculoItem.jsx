@@ -1,4 +1,10 @@
 function VehiculoItem({ vehiculo, onSalida }) {
+  const handleSalida = () => {
+    const confirmar = window.confirm(`¿Confirma que desea dar salida al vehículo con patente ${vehiculo.patente}?`);
+    if (confirmar) {
+      onSalida(vehiculo.patente);
+    }
+  };
   return (
     <li className={`vehiculo-item ${vehiculo.permanente ? 'estilo-permanente' : ''}`}>
       <div>
@@ -6,7 +12,7 @@ function VehiculoItem({ vehiculo, onSalida }) {
         <br />
         <small>Ingreso: {vehiculo.horaIngreso}</small>
       </div>
-      <button onClick={() => onSalida(vehiculo.patente)} className="btn-salida">
+      <button onClick= {handleSalida} className="btn-salida">
         Dar Salida
       </button>
     </li>

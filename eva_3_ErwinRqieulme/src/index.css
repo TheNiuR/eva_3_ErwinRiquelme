@@ -66,6 +66,8 @@ button:hover {
 .lista-vehiculos {
   list-style: none;
   padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .vehiculo-item {
